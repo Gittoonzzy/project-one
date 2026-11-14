@@ -1,133 +1,96 @@
 @extends('master')
 @section('title')
-HOME
+Home
 @stop
 @section('content')
-<div class="container divContainer">
-  <div class="row divCarousel">
-    <div class="col-md-12 ">
-  <div id="demo" class="carousel slide" data-ride="carousel">
-
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-
-    </ul>
-
-    <!-- The slideshow -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="images/home.jpg" class="img-fluid" alt="cleaning" width="100%" height="50%">
+<section class="hero" style="background-image: url('{{ asset('images/home.jpg') }}')">
+  <div class="hero-shade">
+    <div class="wrap hero-copy">
+      <p class="eyebrow">Espoo · cleaning you can rely on</p>
+      <h1>A calmer home, a clearer office.</h1>
+      <p class="lede">Ebison Siivous Palvelut looks after homes, windows, offices, and shops with the same careful standard on every visit.</p>
+      <div class="hero-actions">
+        <a class="btn" href="{{ url('services') }}">See services</a>
+        <a class="btn btn-ghost" href="{{ url('contact') }}">Request a clean</a>
       </div>
-      <div class="carousel-item ">
-        <img src="images/pic2.jpg" class="img-fluid" alt="cleaning" width="100%" height="50%">
-      </div>
-      <div class="carousel-item ">
-        <img src="images/window.jpg" class="img-fluid" alt="cleaning" width="100%" height="50%">
-      </div>
-
     </div>
-
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
   </div>
-</div>
-</div>
-<div class="row divOurCompany">
-  <div class="col-md-12">
-  <h1>About Our Company</h1>
-  <p>
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-    from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
-    discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-    The first line of Lorem Ipsum, "L
-  </p>
-</div>
-</div>
-<h1 id="services">Services</h1>
-<div class="row div1">
+</section>
 
-  <br/>
-  <div class="col-md-4">
-    <img src="images/window1.jpg" class="img-fluid" alt="cleaning" width="250px" height="250px">
-    <p>Window Cleaning</p>
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">About our company</p>
+      <h2>Care in the details.</h2>
+    </div>
+    <div class="prose">
+      <p>
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      </p>
+      <p>
+        From a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "L
+      </p>
+      <a class="text-link" href="{{ url('about') }}">More about us</a>
+    </div>
   </div>
-  <div class="col-md-4">
-    <img src="images/home.jpg" class="img-fluid" alt="cleaning" width="250px" height="250px">
-    <p>Home Cleaning</p>
+</section>
+
+<section class="section section-mint" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Services</p>
+      <h2>What we take care of</h2>
+    </div>
+    <div class="card-grid">
+      <a class="photo-card" href="{{ url('services') }}">
+        <img src="{{ asset('images/window1.jpg') }}" alt="Window cleaning">
+        <span>Window cleaning</span>
+      </a>
+      <a class="photo-card" href="{{ url('services') }}">
+        <img src="{{ asset('images/home.jpg') }}" alt="Home cleaning">
+        <span>Home cleaning</span>
+      </a>
+      <a class="photo-card" href="{{ url('services') }}">
+        <img src="{{ asset('images/pic2.jpg') }}" alt="Office cleaning">
+        <span>Office cleaning</span>
+      </a>
+    </div>
   </div>
-  <div class="col-md-4">
-    <img src="images/pic2.jpg" class="img-fluid" alt="cleaning" width="250px" height="250px">
-    <p> Office Cleaning</p>
+</section>
+
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Reviews</p>
+      <h2>What clients say</h2>
+    </div>
+    <div class="card-grid">
+      <blockquote class="quote-card">
+        <p>Pidän palvelusta.</p>
+        <footer>Anonymous</footer>
+      </blockquote>
+      <blockquote class="quote-card">
+        <p>The cleaning service helped me so much in time of my exams.</p>
+        <footer>Student</footer>
+      </blockquote>
+      <blockquote class="quote-card">
+        <p>Suosittelen palvelua ehdottomasti!</p>
+        <footer>Anonymous</footer>
+      </blockquote>
+    </div>
   </div>
-</div>
-<h1 id="reviews">Reviews</h1>
-<div class="row div2">
-<div class="col-md-12">
-  <div class="row">
-<div class="text-center col-md-4">
-<img src="images/avatar1.png" class="rounded" alt="Review 1">
-<p>Anonymous</p>
-<p>Pidän palvelusta.</p>
-</div>
+</section>
 
-<div class="text-center col-md-4">
-<img src="images/avatar1.png" class="rounded" alt="Review 2">
-<p>Student</p>
-<p>The cleaning service helped me so much in time of my exams</p>
-</div>
-
-<div class="text-center col-md-4">
-<img src="images/avatar1.png" class="rounded" alt="Review 3">
-<p>Anonymous</p>
-<p>Suosittelen palvelua ehdottomasti!</p>
-</div>
-
-
-
-</div>
-</div>
-</div>
-<h1 id="contact">Contact Us</h1>
-<div class="row div3">
-
-<div class="col-md-12">
-  <form action="{{url('sendForm')}}" id="contactForm" method="post">
-  @csrf
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input type="text" class="form-control" id="name"  name="name" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
+<section class="section section-contact" id="contact">
+  <div class="wrap contact-panel">
+    <div>
+      <p class="eyebrow">Contact us</p>
+      <h2>Tell us what needs cleaning.</h2>
+      <p class="lede">Isännäntie 1b 6, Espoo 02940. Call 045 157 6175 or leave a message and we will get back to you.</p>
+    </div>
+    <div class="form-card">
+      @include('partials.contact-form', ['formId' => 'homeForm'])
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="phonenumber">Phone Number:</label>
-    <input type="text" class="form-control" id="phone"  name="phone" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="text" class="form-control" id="email" name="email" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
-  <div class="form-group">
-  <label for="comment">Message:</label>
-  <textarea class="form-control" rows="6" id="message" name="message"></textarea>
-</div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
-</div>
-</div>
+</section>
 @stop
